@@ -1,0 +1,247 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InsufficientFeeTokenAmount",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidMsgValue",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "destChainSelector",
+						"type": "uint64"
+					}
+				],
+				"name": "UnsupportedDestinationChain",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "destinationChainSelector",
+						"type": "uint64"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "receiver",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "token",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "amount",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Client.EVMTokenAmount[]",
+								"name": "tokenAmounts",
+								"type": "tuple[]"
+							},
+							{
+								"internalType": "address",
+								"name": "feeToken",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraArgs",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Client.EVM2AnyMessage",
+						"name": "message",
+						"type": "tuple"
+					}
+				],
+				"name": "ccipSend",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "destinationChainSelector",
+						"type": "uint64"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "receiver",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "token",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "amount",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Client.EVMTokenAmount[]",
+								"name": "tokenAmounts",
+								"type": "tuple[]"
+							},
+							{
+								"internalType": "address",
+								"name": "feeToken",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraArgs",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Client.EVM2AnyMessage",
+						"name": "message",
+						"type": "tuple"
+					}
+				],
+				"name": "getFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "destChainSelector",
+						"type": "uint64"
+					}
+				],
+				"name": "isChainSupported",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "supported",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"ccipSend(uint64,(bytes,bytes,(address,uint256)[],address,bytes))": {
+					"details": "Note if msg.value is larger than the required fee (from getFee) we accept the overpayment with no refund.Reverts with appropriate reason upon invalid message.",
+					"params": {
+						"destinationChainSelector": "The destination chain ID",
+						"message": "The cross-chain CCIP message including data and/or tokens"
+					},
+					"returns": {
+						"_0": "messageId The message ID"
+					}
+				},
+				"getFee(uint64,(bytes,bytes,(address,uint256)[],address,bytes))": {
+					"details": "Reverts with appropriate reason upon invalid message.",
+					"params": {
+						"destinationChainSelector": "The destination chainSelector",
+						"message": "The cross-chain CCIP message including data and/or tokens"
+					},
+					"returns": {
+						"fee": "returns execution fee for the message delivery to destination chain, denominated in the feeToken specified in the message."
+					}
+				},
+				"isChainSupported(uint64)": {
+					"params": {
+						"destChainSelector": "The chain to check."
+					},
+					"returns": {
+						"supported": "is true if it is supported, false if not."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"ccipSend(uint64,(bytes,bytes,(address,uint256)[],address,bytes))": {
+					"notice": "Request a message to be sent to the destination chain"
+				},
+				"isChainSupported(uint64)": {
+					"notice": "Checks if the given chain ID is supported for sending/receiving."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TransferUSDCBasic_flattened.sol": "IRouterClient"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TransferUSDCBasic_flattened.sol": {
+			"keccak256": "0x3805dc7be0fe0e13fc846a085d6b39aca23b3149fb8f2383bdecfd6ce5114a4a",
+			"urls": [
+				"bzz-raw://2b31b633e47dfcc30bddb63e45ecbb6ab2218562d2d660ef3eeac2686b085064",
+				"dweb:/ipfs/QmT9rPvy4gKugXLWMVi3CtAj8mCKPa7EoRyDCr4UjdPiFd"
+			]
+		}
+	},
+	"version": 1
+}

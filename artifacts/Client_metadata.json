@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "EVM_EXTRA_ARGS_V1_TAG",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "EVM_EXTRA_ARGS_V2_TAG",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TransferUSDCBasic_flattened.sol": "Client"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TransferUSDCBasic_flattened.sol": {
+			"keccak256": "0x3805dc7be0fe0e13fc846a085d6b39aca23b3149fb8f2383bdecfd6ce5114a4a",
+			"urls": [
+				"bzz-raw://2b31b633e47dfcc30bddb63e45ecbb6ab2218562d2d660ef3eeac2686b085064",
+				"dweb:/ipfs/QmT9rPvy4gKugXLWMVi3CtAj8mCKPa7EoRyDCr4UjdPiFd"
+			]
+		}
+	},
+	"version": 1
+}
